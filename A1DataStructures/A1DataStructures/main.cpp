@@ -1,3 +1,7 @@
+// Assignment 1 Data Structures
+// Julian Escobar Echeverri
+// Student Number: 101286557
+
 #include "OrderedArray.h"
 #include "UnorderedArray.h"
 
