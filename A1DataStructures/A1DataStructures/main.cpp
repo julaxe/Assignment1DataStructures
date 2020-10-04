@@ -16,7 +16,7 @@ int main() {
 	
 	orderedarray.Print("Ordered Array: ");
 
-	auto* unordered = new UnorderedArray<int>(1);
+	auto* unordered = new UnorderedArray<int>(1); // checking expand by increasing value
 	unordered->push(6);
 	unordered->push(4);
 	unordered->push(10);

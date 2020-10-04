@@ -87,9 +87,8 @@ public:
 	void Print(const char* name)
 	{
 		assert(m_array != NULL);
-		int index = 0;
 		std::cout << name;
-		PrintData(index);
+		PrintData(0); //start with index = 0
 		std::cout << std::endl;
 	}
 protected:
