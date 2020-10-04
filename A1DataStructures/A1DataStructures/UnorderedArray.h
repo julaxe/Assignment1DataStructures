@@ -5,7 +5,7 @@ template<class T>
 class UnorderedArray : public Array<T>
 {
 public:
-	UnorderedArray(int size, int growBy = 1) : Array<T>(size)
+	UnorderedArray(int size, int growBy = 1) : Array<T>(size, growBy)
 	{}
 	
 	void push(T val) override

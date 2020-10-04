@@ -7,13 +7,28 @@ template<class T>
 class OrderedArray : public Array<T>
 {
 public:
-	OrderedArray(int size, int growBy = 1) : Array<T>(size)
-	{}
+	OrderedArray(int size, bool duplicateData, int growBy = 1) : Array<T>(size, growBy)
+	{
+		m_duplicateData = duplicateData;
+	}
 
 	void push(T val) override
 	{
 		assert(this->m_array != NULL);
+		
+		// if duplicateData = true -> allows duplicate data in the array
+		if(!m_duplicateData)
+		{
+			for (int i = 0; i < this->m_numElements; i++)
+			{
+				if (this->m_array[i] == val)
+				{
+					return;
+				}
+			}
+		}
 
+		// Check for more space in the array
 		if (this->m_numElements >= this->m_maxSize)
 		{
 			this->Expand();
@@ -90,4 +105,6 @@ public:
 		assert(this->m_array != NULL && index < this->m_numElements);
 		return this->m_array[index];
 	}
+private:
+	bool m_duplicateData;
 };

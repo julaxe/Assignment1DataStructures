@@ -102,6 +102,7 @@ protected:
 		}
 
 		// Create the new array
+		m_growSize *= 2; //Expand on Increasing Value 2,4,8,16,etc
 		T* temp = new T[m_maxSize + m_growSize];
 		assert(temp != NULL);
 
